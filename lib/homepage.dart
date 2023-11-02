@@ -17,6 +17,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
 
   List<Apihit>adduser=[];
+<<<<<<< HEAD
   Future<List<Apihit>>getApi()async{
     final responce =await http.get(Uri.parse("https://jsonplaceholder.typicode.com/photos"));
     var data=jsonDecode(responce.body.toString());
@@ -27,6 +28,28 @@ class _HomepageState extends State<Homepage> {
       return adduser;
     }
     else{
+=======
+
+  Future<List<Apihit>>getApi()async{
+    try {
+      final responce = await http.get(
+          Uri.parse("https://jsonplaceholder.typicode.com/photos"));
+      var data = jsonDecode(responce.body.toString());
+
+
+      if (responce.statusCode == 200) {
+        for (Map<String, dynamic>i in data) {
+          adduser.add(Apihit.fromJson(i));
+        }
+        return adduser;
+      }
+      else {
+        return adduser;
+      }
+    }
+    catch(e){
+      print(e.toString());
+>>>>>>> d7cee08 (update)
       return adduser;
     }
   }
