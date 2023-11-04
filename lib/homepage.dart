@@ -21,7 +21,7 @@ class _HomepageState extends State<Homepage> {
   Future<List<Apihit>> getApi() async {
 
       final response = await http.get(
-          Uri.parse("https://jsonplaceholder.typicode.com/photo"));
+          Uri.parse("https://jsonplaceholder.typicode.com/photos"));
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body) as List<dynamic>;
         for (Map<String, dynamic> item in data) {
