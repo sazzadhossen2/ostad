@@ -1,20 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ostad/homepage.dart';
+import 'package:ostad/screen/secondscreen.dart';
 
 void main(){
-  runApp(Myapps());
+  runApp(const Myapps());
 }
 class Myapps extends StatelessWidget {
   const Myapps({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Homepage(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:Secondscreen(),
     );
   }
 }
+
 
 
 
