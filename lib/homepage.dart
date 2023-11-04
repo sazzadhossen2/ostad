@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
@@ -8,51 +7,34 @@ import 'package:http/http.dart' as http;
 import 'package:ostad/secondpage.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+  const Homepage({Key? key});
 
   @override
   State<Homepage> createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
+  List<Apihit> adduser = [];
 
-  List<Apihit>adduser=[];
-<<<<<<< HEAD
-  Future<List<Apihit>>getApi()async{
-    final responce =await http.get(Uri.parse("https://jsonplaceholder.typicode.com/photos"));
-    var data=jsonDecode(responce.body.toString());
-    if(responce.statusCode==200){
-      for(Map<String ,dynamic>i in data){
-        adduser.add(Apihit.fromJson(i));
-      }
-      return adduser;
-    }
-    else{
-=======
-
-  Future<List<Apihit>>getApi()async{
+  Future<List<Apihit>> getApi() async {
     try {
-      final responce = await http.get(
+      final response = await http.get(
           Uri.parse("https://jsonplaceholder.typicode.com/photos"));
-      var data = jsonDecode(responce.body.toString());
-
-
-      if (responce.statusCode == 200) {
-        for (Map<String, dynamic>i in data) {
-          adduser.add(Apihit.fromJson(i));
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body) as List<dynamic>;
+        for (Map<String, dynamic> item in data) {
+          adduser.add(Apihit.fromJson(item));
         }
         return adduser;
-      }
-      else {
+      } else {
         return adduser;
       }
-    }
-    catch(e){
+    } catch (e) {
       print(e.toString());
->>>>>>> d7cee08 (update)
       return adduser;
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
