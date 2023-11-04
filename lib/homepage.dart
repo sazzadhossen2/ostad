@@ -65,17 +65,17 @@ class _HomepageState extends State<Homepage> {
                             children: [
                               Expanded(
                                   flex: 1,
-                                  child: Image(image: NetworkImage(adduser[index].url.toString()))),
+                                  child: Image(image: NetworkImage(adduser[index].thumbnailUrl.toString()))),
                               SizedBox(width: 20,),
                               Expanded(
                                   flex:2,
                                   child: Text(adduser[index].title.toString(),style: TextStyle(fontWeight: FontWeight.bold,),)),
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
+                      );
                   });
             }
           }),
