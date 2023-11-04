@@ -4,8 +4,8 @@
 /// url : "https://via.placeholder.com/600/92c952"
 /// thumbnailUrl : "https://via.placeholder.com/150/92c952"
 
-class Apihit {
-  Apihit({
+class Apicolling {
+  Apicolling({
       num? albumId, 
       num? id, 
       String? title, 
@@ -18,7 +18,7 @@ class Apihit {
     _thumbnailUrl = thumbnailUrl;
 }
 
-  Apihit.fromJson(dynamic json) {
+  Apicolling.fromJson(dynamic json) {
     _albumId = json['albumId'];
     _id = json['id'];
     _title = json['title'];
@@ -30,12 +30,12 @@ class Apihit {
   String? _title;
   String? _url;
   String? _thumbnailUrl;
-Apihit copyWith({  num? albumId,
+Apicolling copyWith({  num? albumId,
   num? id,
   String? title,
   String? url,
   String? thumbnailUrl,
-}) => Apihit(  albumId: albumId ?? _albumId,
+}) => Apicolling(  albumId: albumId ?? _albumId,
   id: id ?? _id,
   title: title ?? _title,
   url: url ?? _url,
